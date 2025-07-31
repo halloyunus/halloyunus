@@ -243,3 +243,73 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+const aboutSection = document.querySelector('#about');
+const aboutContent = document.querySelector('.about-content');
+
+window.addEventListener('scroll', () => {
+    const sectionPos = aboutSection.getBoundingClientRect().top;
+    const screenPos = window.innerHeight / 1.3;
+    
+    if(sectionPos < screenPos) {
+        aboutContent.classList.add('in-view');
+    }
+});
+
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        const items = document.querySelectorAll('.timeline-item');
+        
+        items.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    });
+});
+
+// Expand/collapse functionality
+document.querySelectorAll('.expand-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('i');
+        
+        content.classList.toggle('show');
+        
+        if (content.classList.contains('show')) {
+            this.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+        } else {
+            this.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
+        }
+    });
+});
+
+// Animation on scroll
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+function checkScroll() {
+    timelineItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (itemTop < windowHeight * 0.8) {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+// Initial check
+checkScroll();
+
+// Check on scroll
+window.addEventListener('scroll', checkScroll);
