@@ -1,14 +1,14 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color : #069416;
+    color :rgb(13, 175, 32);
 /*     color: #333; */
     
 }
 
 .highlight {
 /*     color: #e74c3c; */
-    color : #0a6c80;
+    color :rgb(19, 139, 163);
     font-weight: bold;
 }
 /* Reset dan Base Styles */
