@@ -453,17 +453,17 @@ body {
     padding: 5px 10px;
     background: var(--primary-color);
     color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     text-align: center;
     font-weight: 200;
 }
 
 .timeline-item:nth-child(odd) .timeline-date {
-    right: -140px;
+    right: -120px;
 }
 
 .timeline-item:nth-child(even) .timeline-date {
-    left: -140px;
+    left: -120px;
 }
 
 .timeline-content {
