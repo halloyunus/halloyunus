@@ -1336,30 +1336,3 @@ body {
   transform: perspective(1000px) rotateY(0deg);
 }
 
-/* LIGHT MODE (Default) */
-:root {
-  --color-text: #2c3e50; /* Teks gelap */
-  --color-background: #ffffff; /* Latar belakang terang */
-  --color-accent: #3498db; /* Warna tombol/link */
-  --color-card-bg: #f8f8f8; /* Latar belakang kartu/section */
-}
-
-/* DARK MODE */
-body.dark-theme {
-  --color-text: #ecf0f1; /* Teks terang */
-  --color-background: #1e272e; /* Latar belakang sangat gelap */
-  --color-accent: #2ecc71; /* Warna aksen yang berbeda */
-  --color-card-bg: #2c3e50; /* Latar belakang kartu gelap */
-}
-
-/* Terapkan variabel ke elemen utama */
-body {
-  background-color: var(--color-background);
-  color: var(--color-text);
-  transition: background-color 0.3s, color 0.3s; /* Animasi transisi halus */
-}
-
-.section-card { /* Contoh elemen seperti section, about me, atau skills */
-  background-color: var(--color-card-bg);
-}
-/* Terapkan var() ke semua properti warna */
