@@ -120,6 +120,7 @@
   window.addEventListener('load', initParticles);
 })();
 
+// Animated Add
 document.addEventListener("DOMContentLoaded", function () {
   const textToType = "Muhamad Yunus";
   const headingElement = document.getElementById("animated-name");
