@@ -179,7 +179,7 @@ dialog p{color:var(--muted);margin:10px 0 20px}
   .js .reveal{opacity:1;transform:none}
 }
 /* Add New Manualy */
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   /* 1. Menyembunyikan foto di section About pada HP */
   section aside img {
     display: none !important;
