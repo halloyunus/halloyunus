@@ -249,8 +249,8 @@ ul{list-style:none}
 .menu-toggle.open span:nth-child(2){opacity:0}
 .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* Hero - Padding bawah disesuaikan agar tidak terlalu renggang ke section berikutnya */
-.hero{position:relative;min-height:90vh;display:flex;align-items:center;padding:100px 0 45px;background:radial-gradient(900px 500px at 80% 10%,rgba(45,212,191,.10),transparent 60%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px) 0 0/48px 48px,var(--bg)}
+/* --- Perbaikan Global (Agar tidak terlalu renggang di Desktop & Mode Desktop HP) --- */
+.hero{position:relative;min-height:85vh;display:flex;align-items:center;padding:90px 0 50px;background:radial-gradient(900px 500px at 80% 10%,rgba(45,212,191,.10),transparent 60%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px) 0 0/48px 48px,var(--bg)}
 .hero-background{position:absolute;inset:0;opacity:.5;pointer-events:none}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
 .eyebrow{color:var(--primary);font-weight:500;margin-bottom:6px}
@@ -273,7 +273,7 @@ h1{font-size:clamp(2.6rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.035em;fo
 .profile-frame{border-radius:28px;padding:8px;border:1px solid var(--border);background:var(--surface);max-width:380px;margin-left:auto}
 .profile-frame img{border-radius:22px;width:100%;aspect-ratio:1;object-fit:cover}
 
-/* Sections - Padding global diperkecil dari 110px ke 70px agar lebih proporsional */
+/* Padding global section dikurangi dari 110px ke 70px agar tidak terlalu renggang */
 .section{padding:70px 0} 
 .section.alt{background:var(--alt)}
 .section-title{font-size:clamp(2rem,4.5vw,3.25rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
@@ -371,19 +371,16 @@ dialog p{color:var(--muted);margin:10px 0 20px}
 .js .reveal{opacity:0;transform:translateY(18px) scale(.98);transition:opacity .6s ease,transform .6s ease}
 .js .reveal.in{opacity:1;transform:none}
 
-/* Responsive (Mobile & Desktop-in-Mobile Fixes) */ 
+/* Responsive Rules */ 
 @media(max-width:900px){
-  .hero-grid, .about-content { grid-template-columns: 1fr; }
-  .hero-image { order: 2; }
-  .profile-frame { margin: 0 auto; max-width: 300px; }
-  .cards { grid-template-columns: 1fr; }
-  .skill-grid { grid-template-columns: 1fr 1fr; }
+  .hero-grid,.about-content{grid-template-columns:1fr}
+  .hero-image{order:2}.profile-frame{margin:0 auto;max-width:300px}
+  .cards{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr 1fr}
+  .section{padding:50px 0}
   
-  /* Jarak antar section di HP diperkecil agar tidak jauh */
-  .section { padding: 50px 0; }
-  
-  /* MENYEMBUNYIKAN FOTO KEDUA DI SECTION ABOUT PADA MOBILE */
-  .about-content .profile-card {
+  /* HANYA MENYEMBUNYIKAN FOTO DI SECTION ABOUT PADA MOBILE */
+  .profile-card img{
     display: none !important;
   }
 }
@@ -403,7 +400,7 @@ dialog p{color:var(--muted);margin:10px 0 20px}
   .metrics{grid-template-columns:1fr 1fr 1fr;gap:8px}
   .metrics strong{font-size:1.5rem}
   .hero-btns .btn{width:100%;justify-content:center}
-  .hero{padding-top:90px}
+  .hero{padding-top:80px;padding-bottom:30px;min-height:auto}
 }
 
 @media(prefers-reduced-motion:reduce){
