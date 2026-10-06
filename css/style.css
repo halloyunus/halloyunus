@@ -30,10 +30,10 @@ ul{list-style:none}
 
 /* Hero */
 .hero{position:relative;
-      min-height:80vh;
+      min-height:100svh;
       display:flex;
       align-items:center;
-      padding:100px 0 40px;
+      padding:110px 0 70px;
       background:radial-gradient(900px 500px at 80% 10%,rgba(45,212,191,.10),transparent 60%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px) 0 0/48px 48px,var(--bg)}
 .hero-background{position:absolute;inset:0;opacity:.5;pointer-events:none}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
@@ -58,8 +58,7 @@ h1{font-size:clamp(2.6rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.035em;fo
 .profile-frame img{border-radius:22px;width:100%;aspect-ratio:1;object-fit:cover}
 
 /* Sections */
-/* .section{padding:110px 0} before*/
-.section{padding:60px 0} /*After*/
+.section{padding:110px 0} before
 .section.alt{background:var(--alt)}
 .section-title{font-size:clamp(2rem,4.5vw,3.25rem);letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
 .section-sub{color:var(--muted);margin-bottom:40px}
