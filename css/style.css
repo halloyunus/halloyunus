@@ -178,3 +178,21 @@ dialog p{color:var(--muted);margin:10px 0 20px}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
 }
+/* Add New Manualy */
+@media (max-width: 768px) {
+  /* 1. Menyembunyikan foto di section About pada HP */
+  section aside img {
+    display: none !important;
+  }
+
+  /* 2. Mengurangi jarak/padding antara Header dan Section About */
+  header {
+    padding-bottom: 2rem !important; /* Sesuaikan nilai ini jika masih kurang pas */
+    margin-bottom: 0 !important;
+  }
+
+  /* Mengurangi padding atas pada section pertama (About) */
+  main section:first-of-type {
+    padding-top: 2rem !important; /* Sesuaikan nilai ini */
+  }
+}
