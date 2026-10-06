@@ -121,21 +121,65 @@
 })();
 
 // Animated Add
+// document.addEventListener("DOMContentLoaded", function () {
+//   const textToType = "Muhamad Yunus";
+//   const headingElement = document.getElementById("animated-name");
+  
+//   // Kosongkan teks awal di HTML agar mulai dari bersih
+//   headingElement.textContent = "";
+  
+//   let charIndex = 0;
+//   const typingSpeed = 120; // Kecepatan mengetik dalam milidetik (semakin kecil semakin cepat)
+
+//   function typeWriter() {
+//     if (charIndex < textToType.length) {
+//       headingElement.textContent += textToType.charAt(charIndex);
+//       charIndex++;
+//       setTimeout(typeWriter, typingSpeed);
+//     }
+//   }
+
+//   // Mulai animasi
+//   typeWriter();
+// });
 document.addEventListener("DOMContentLoaded", function () {
   const textToType = "Muhamad Yunus";
   const headingElement = document.getElementById("animated-name");
   
-  // Kosongkan teks awal di HTML agar mulai dari bersih
   headingElement.textContent = "";
   
   let charIndex = 0;
-  const typingSpeed = 120; // Kecepatan mengetik dalam milidetik (semakin kecil semakin cepat)
+  let isDeleting = false;
+  const typingSpeed = 120;     // Kecepatan saat mengetik (ms)
+  const deletingSpeed = 60;    // Kecepatan saat menghapus (ms)
+  const pauseDuration = 2000;  // Jeda saat teks selesai diketik penuh (ms)
 
   function typeWriter() {
-    if (charIndex < textToType.length) {
-      headingElement.textContent += textToType.charAt(charIndex);
+    if (!isDeleting) {
+      // Proses Mengetik Huruf
+      headingElement.textContent = textToType.substring(0, charIndex + 1);
       charIndex++;
+      
+      // Jika teks sudah selesai diketik seluruhnya
+      if (charIndex === textToType.length) {
+        isDeleting = true;
+        setTimeout(typeWriter, pauseDuration); // Berhenti sejenak sebelum menghapus
+        return;
+      }
       setTimeout(typeWriter, typingSpeed);
+      
+    } else {
+      // Proses Menghapus Huruf
+      headingElement.textContent = textToType.substring(0, charIndex - 1);
+      charIndex--;
+      
+      // Jika teks sudah terhapus semua, mulai mengetik ulang dari awal
+      if (charIndex === 0) {
+        isDeleting = false;
+        setTimeout(typeWriter, 500); // Jeda sebentar sebelum mulai mengetik lagi
+        return;
+      }
+      setTimeout(typeWriter, deletingSpeed);
     }
   }
 
