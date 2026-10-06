@@ -151,7 +151,7 @@ dialog p{color:var(--muted);margin:10px 0 20px}
 .js .reveal.in{opacity:1;transform:none}
 
 /* Before Responsive */ 
-/* @media(max-width:900px){
+@media(max-width:900px){
   .hero-grid,.about-content{grid-template-columns:1fr}
   .hero-image{order:2}.profile-frame{margin:0 auto;max-width:300px}
   .cards{grid-template-columns:1fr}
@@ -177,25 +177,25 @@ dialog p{color:var(--muted);margin:10px 0 20px}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
-} */
+}
 /* After Responsive */
-@media(max-width:900px){
+/* @media(max-width:900px){
   .hero-grid, .about-content { grid-template-columns: 1fr; }
   .hero-image { order: 2; }
   .profile-frame { margin: 0 auto; max-width: 300px; }
   .cards { grid-template-columns: 1fr; }
-  .skill-grid { grid-template-columns: 1fr 1fr; }
+  .skill-grid { grid-template-columns: 1fr 1fr; } */
   
   /* Mengurangi jarak antar section di HP agar tidak terlalu jauh */
-  .section { padding: 40px 0; }
+  /* .section { padding: 40px 0; } */
   
   /* Menyembunyikan foto/aside kedua di bagian About khusus tampilan HP */
-  .about-content aside {
+  /* .about-content aside {
     display: none !important;
   }
-}
+} */
 
-@media(max-width:760px){
+/* @media(max-width:760px){
   .menu-toggle { display: flex; }
   .nav-list { position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: rgba(10,15,28,.97); border-bottom: 1px solid var(--border); padding: 8px 20px 16px; max-height: 0; overflow: hidden; visibility: hidden; opacity: 0; transition: opacity .25s, max-height .3s, visibility .3s; }
   .nav-list.open { max-height: 480px; visibility: visible; opacity: 1; }
@@ -209,13 +209,13 @@ dialog p{color:var(--muted);margin:10px 0 20px}
   .skill-grid { grid-template-columns: 1fr; }
   .metrics { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
   .metrics strong { font-size: 1.5rem; }
-  .hero-btns .btn { width: 100%; justify-content: center; }
+  .hero-btns .btn { width: 100%; justify-content: center; } */
   
   /* Menyesuaikan padding atas/bawah pada hero/header di layar kecil */
-  .hero { padding-top: 80px; padding-bottom: 20px; }
+  /* .hero { padding-top: 80px; padding-bottom: 20px; }
 }
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
-}
+} */
