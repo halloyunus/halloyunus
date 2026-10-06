@@ -119,3 +119,25 @@
   });
   window.addEventListener('load', initParticles);
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const textToType = "Muhamad Yunus";
+  const headingElement = document.getElementById("animated-name");
+  
+  // Kosongkan teks awal di HTML agar mulai dari bersih
+  headingElement.textContent = "";
+  
+  let charIndex = 0;
+  const typingSpeed = 120; // Kecepatan mengetik dalam milidetik (semakin kecil semakin cepat)
+
+  function typeWriter() {
+    if (charIndex < textToType.length) {
+      headingElement.textContent += textToType.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeWriter, typingSpeed);
+    }
+  }
+
+  // Mulai animasi
+  typeWriter();
+});
