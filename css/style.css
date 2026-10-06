@@ -150,8 +150,8 @@ dialog p{color:var(--muted);margin:10px 0 20px}
 .js .reveal{opacity:0;transform:translateY(18px) scale(.98);transition:opacity .6s ease,transform .6s ease}
 .js .reveal.in{opacity:1;transform:none}
 
-/* Responsive */
-@media(max-width:900px){
+/* Before Responsive */ 
+/* @media(max-width:900px){
   .hero-grid,.about-content{grid-template-columns:1fr}
   .hero-image{order:2}.profile-frame{margin:0 auto;max-width:300px}
   .cards{grid-template-columns:1fr}
@@ -177,22 +177,45 @@ dialog p{color:var(--muted);margin:10px 0 20px}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
-}
-/* Add New Manualy */
-@media(max-width: 768px) {
-  /* 1. Menyembunyikan foto di section About pada HP */
-  section aside img {
+} */
+/* After Responsive */
+@media(max-width:900px){
+  .hero-grid, .about-content { grid-template-columns: 1fr; }
+  .hero-image { order: 2; }
+  .profile-frame { margin: 0 auto; max-width: 300px; }
+  .cards { grid-template-columns: 1fr; }
+  .skill-grid { grid-template-columns: 1fr 1fr; }
+  
+  /* Mengurangi jarak antar section di HP agar tidak terlalu jauh */
+  .section { padding: 40px 0; }
+  
+  /* Menyembunyikan foto/aside kedua di bagian About khusus tampilan HP */
+  .about-content aside {
     display: none !important;
   }
+}
 
-  /* 2. Mengurangi jarak/padding antara Header dan Section About */
-  header {
-    padding-bottom: 2rem !important; /* Sesuaikan nilai ini jika masih kurang pas */
-    margin-bottom: 0 !important;
-  }
+@media(max-width:760px){
+  .menu-toggle { display: flex; }
+  .nav-list { position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: rgba(10,15,28,.97); border-bottom: 1px solid var(--border); padding: 8px 20px 16px; max-height: 0; overflow: hidden; visibility: hidden; opacity: 0; transition: opacity .25s, max-height .3s, visibility .3s; }
+  .nav-list.open { max-height: 480px; visibility: visible; opacity: 1; }
+  .nav-list a { padding: 14px 4px; font-size: 16px; }
+  .nav-list a.active::after { left: 4px; right: auto; width: 24px; }
+  .nav-list .nav-cv a { margin: 8px 0 0; text-align: center; }
+}
 
-  /* Mengurangi padding atas pada section pertama (About) */
-  main section:first-of-type {
-    padding-top: 2rem !important; /* Sesuaikan nilai ini */
-  }
+@media(max-width:520px){
+  body { font-size: 16px; }
+  .skill-grid { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .metrics strong { font-size: 1.5rem; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
+  
+  /* Menyesuaikan padding atas/bawah pada hero/header di layar kecil */
+  .hero { padding-top: 80px; padding-bottom: 20px; }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .reveal { opacity: 1; transform: none; }
 }
