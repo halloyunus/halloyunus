@@ -407,3 +407,17 @@ dialog p{color:var(--muted);margin:10px 0 20px}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
 }
+/* Animation */
+#animated-name::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink-cursor 0.7s infinite;
+  color: var(--primary); /* Mengikuti warna tema utama website Anda */
+  font-weight: 400;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
