@@ -142,3 +142,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mulai animasi
   typeWriter();
 });
+// year function
+document.addEventListener("DOMContentLoaded", function () {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
